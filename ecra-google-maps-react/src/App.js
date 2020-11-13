@@ -6,6 +6,16 @@ import {
 import './App.css';
 
 const libraries = ["places"];
+const mapContainerStyle = {
+  width: "100vw",
+  height: "100vh",
+};
+
+const center = {
+  lat: 40.633125,
+  lng: -89.398529,
+
+};
 
 function App() {
 
@@ -19,7 +29,11 @@ function App() {
 
   return (
     <div>
-      map
+      <GoogleMap 
+        mapContainerStyle={mapContainerStyle} 
+        zoom={8} 
+        center={center}>
+      </GoogleMap> 
     </div>
   );
 }
