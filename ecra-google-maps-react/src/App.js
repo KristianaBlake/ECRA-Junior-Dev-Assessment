@@ -1,9 +1,12 @@
 import React from "react";
+// importing Google Maps 
 import {
   GoogleMap,
   useLoadScript
 } from "@react-google-maps/api";
 import './App.css';
+
+// options passed to Google Maps Component start 
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -11,14 +14,20 @@ const mapContainerStyle = {
   height: "100vh",
 };
 
+// this variables prevents React from rerending and
+// thinking that the center is another location
 const center = {
   lat: 40.633125,
   lng: -89.398529,
 
 };
 
+// options passed to Google Maps Component end
+
 function App() {
 
+  // useLoadScript hook sets up the google script bc
+  // it prevents us from using a script tag and activates our API key
   const {isLoaded, loadError} = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     libraries,
