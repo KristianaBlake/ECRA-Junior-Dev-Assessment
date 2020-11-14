@@ -29,6 +29,9 @@ function App() {
 
   return (
     <div>
+      <h2>
+      Illinois Private School Search
+      </h2>
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
         zoom={7} 
