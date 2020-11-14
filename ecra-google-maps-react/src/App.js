@@ -31,7 +31,7 @@ function App() {
     <div>
       <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
-        zoom={8} 
+        zoom={7} 
         center={center}>
       </GoogleMap> 
     </div>
