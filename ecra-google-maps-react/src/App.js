@@ -37,15 +37,38 @@ function App() {
   if (!isLoaded) return "Loading Maps";
 
   return (
-    <div>
-      <h2>
-      Illinois Private School Search
-      </h2>
-      <GoogleMap 
-        mapContainerStyle={mapContainerStyle} 
-        zoom={7} 
-        center={center}>
-      </GoogleMap> 
+    <div id="main-container">
+      <div id="header">
+
+        <h2>
+        Illinois Private School Search
+        </h2>
+
+        <h3>
+        Enter criteria below to search for your ideal private school 
+        based on <br/>
+        data from The National Center for Education Statistics (NCES) 
+        provided by ECRA Group HYA 
+        </h3>
+
+      </div> 
+
+      <br/>
+
+      <div id ="left-container">
+        Form goes here
+      </div>
+
+      <div id ="right-container">
+
+        <GoogleMap 
+          mapContainerStyle={mapContainerStyle} 
+          zoom={7} 
+          center={center}>
+        </GoogleMap> 
+
+      </div>
+
     </div>
   );
 }
