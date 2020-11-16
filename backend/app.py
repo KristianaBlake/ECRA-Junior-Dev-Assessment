@@ -1,7 +1,8 @@
-from flask import Flask, render_template, jsonify 
+from flask import Flask, render_template, jsonify, g
+
 
 DEBUG = True
-PORT = 5000
+PORT = 8000
 
 # Initializes an instance the Flask class 
 # this starts the website! 
