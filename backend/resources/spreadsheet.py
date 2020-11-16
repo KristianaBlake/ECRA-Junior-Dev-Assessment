@@ -44,9 +44,12 @@ list_of_schools = sheet.get_all_records()
 # 	print(keys)
 
 # prints values in list of schools
-for school in list_of_schools:
-	values = school.values()
-	print(values)
+# for school in list_of_schools:
+# 	values = school.values()
+# 	print(values)
 
-
+@spreadsheets.route('/')
+def search_results():
+	for school in list_of_schools:
+		
 
