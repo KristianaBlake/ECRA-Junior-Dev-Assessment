@@ -5,6 +5,7 @@ import {
   useLoadScript
 } from "@react-google-maps/api";
 import './App.css';
+import FormConainter from "./FormContainer"
 
 // options passed to Google Maps Component start 
 
@@ -56,7 +57,7 @@ function App() {
       <br/>
 
       <div id ="left-container">
-        Form goes here
+        <FormConainter/>
       </div>
 
       <div id ="right-container">
