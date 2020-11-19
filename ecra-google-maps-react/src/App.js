@@ -7,35 +7,47 @@ import {
 import './App.css';
 import FormConainter from "./FormContainer"
 
-// options passed to Google Maps Component start 
-
-const libraries = ["places"];
-const mapContainerStyle = {
-  width: "100vw",
-  height: "100vh",
-};
-
-// this variables prevents React from rerending and
-// thinking that the center is another location
-const center = {
-  lat: 40.633125,
-  lng: -89.398529,
-
-};
-
 // options passed to Google Maps Component end
 
-function App() {
+class App extends React.Component {
+  contstructor(props) {
+    super(props);
 
-  // useLoadScript hook sets up the google script bc
-  // it prevents us from using a script tag and activates our API key
-  const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-    libraries,
-  });
+  }
 
-  if (loadError) return "Error loading maps";
-  if (!isLoaded) return "Loading Maps";
+  componentDidMount(){
+
+    // options passed to Google Maps Component start 
+
+    const libraries = ["places"];
+    const mapContainerStyle = {
+      width: "100vw",
+      height: "100vh",
+    };
+
+    // this variables prevents React from rerending and
+    // thinking that the center is another location
+    const center = {
+      lat: 40.633125,
+      lng: -89.398529,
+
+    };
+
+    // useLoadScript hook sets up the google script bc
+    // it prevents us from using a script tag and activates our API key
+    const {isLoaded, loadError} = useLoadScript({
+      googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
+      libraries,
+    });
+
+    if (loadError) return "Error loading maps";
+    if (!isLoaded) return "Loading Maps";
+
+  }
+
+  // create state in props
+  // add event handler -- change props, show Google API + results from Google aPI
+
 
   return (
     <div id="main-container">
