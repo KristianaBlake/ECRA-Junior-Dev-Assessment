@@ -48,6 +48,9 @@ list_of_schools = sheet.get_all_records()
 # 	values = school.values()
 # 	print(values)
 
+# take in data from user
+# compare value to key in database
+# show value with address attached to show location with Google API 
 @spreadsheets.route('/')
 def search_results():
 	for school in list_of_schools:
