@@ -5,33 +5,29 @@ import {
   useLoadScript
 } from "@react-google-maps/api";
 import './App.css';
-import FormConainter from "./FormContainer"
+
+import FormContainer from "./FormContainer"
 
 // options passed to Google Maps Component end
 
-class App extends React.Component {
-  contstructor(props) {
-    super(props);
+// options passed to Google Maps Component start 
 
-  }
+const libraries = ["places"];
+const mapContainerStyle = {
+  width: "100vw",
+  height: "100vh",
+};
 
-  componentDidMount(){
+// this variables prevents React from rerending and
+// thinking that the center is another location
+const center = {
+  lat: 40.633125,
+  lng: -89.398529,
 
-    // options passed to Google Maps Component start 
+};
 
-    const libraries = ["places"];
-    const mapContainerStyle = {
-      width: "100vw",
-      height: "100vh",
-    };
 
-    // this variables prevents React from rerending and
-    // thinking that the center is another location
-    const center = {
-      lat: 40.633125,
-      lng: -89.398529,
-
-    };
+function App() {
 
     // useLoadScript hook sets up the google script bc
     // it prevents us from using a script tag and activates our API key
@@ -42,12 +38,6 @@ class App extends React.Component {
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return "Loading Maps";
-
-  }
-
-  // create state in props
-  // add event handler -- change props, show Google API + results from Google aPI
-
 
   return (
     <div id="main-container">
@@ -69,7 +59,7 @@ class App extends React.Component {
       <br/>
 
       <div id ="left-container">
-        <FormConainter/>
+        <FormContainer/> 
       </div>
 
       <div id ="right-container">
@@ -84,6 +74,7 @@ class App extends React.Component {
 
     </div>
   );
+
 }
 
 export default App;
