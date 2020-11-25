@@ -1,3 +1,4 @@
+from flask import jsonify, request
 # imports Google Spreasheet packages
 import gspread 
 # import Gspread Authorization
@@ -20,6 +21,12 @@ sheet =  client.open("Copy of PrivateNCESForDevs").sheet1
 # prints hashed list of schools
 list_of_schools = sheet.get_all_records()
 
+@spreadsheet.route('/api/vi/schools/all', methods=['GET'])
+def api_all():
+	return jsonify(list_of_schools)
+
+# print(list_of_schools)
+
 # iterated over the indeces of list of schools 
 # printed keys and values 
 # for i in range(len(list_of_schools)):
@@ -29,6 +36,12 @@ list_of_schools = sheet.get_all_records()
 # for school in list_of_schools:
 # 	for key in school:
 # 		print(school[key])
+
+# this print the values not the keys. The Values are listed (A-AD) 
+# for school in list_of_schools:
+# 	for key in school:
+# 		if (school[key] == school(['County'])
+# 			print(key)
 
 # this also print the value not the keys 
 # for school in list_of_schools:
@@ -43,6 +56,9 @@ list_of_schools = sheet.get_all_records()
 # 	keys = school.keys()
 # 	print(keys)
 
+
+# if value matches value, return value
+
 # prints values in list of schools
 # for school in list_of_schools:
 # 	values = school.values()
@@ -51,8 +67,8 @@ list_of_schools = sheet.get_all_records()
 # take in data from user
 # compare value to key in database
 # show value with address attached to show location with Google API 
-@spreadsheets.route('/')
-def search_results():
-	for school in list_of_schools:
+# @spreadsheets.route('/')
+# def search_results():
+# 	for school in list_of_schools:
 		
 
